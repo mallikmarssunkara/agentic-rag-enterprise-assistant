@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-Enterprise teams often store critical knowledge across multiple document formats. Finding reliable answers quickly becomes difficult when information is spread across PDFs, text files, spreadsheets, and tables. This project solves that problem with a Retrieval-Augmented Generation application that only answers from uploaded business documents.
+Enterprise knowledge is often distributed across heterogeneous document formats, including PDF files, plain text documents, spreadsheets, and tabular reports. This fragmentation makes timely and reliable information access difficult, particularly when users must manually locate relevant passages before making decisions. This project addresses that challenge by implementing a Retrieval-Augmented Generation (RAG) assistant that ingests uploaded enterprise documents, retrieves semantically relevant evidence, and generates responses constrained to the retrieved context.
 
 ## Features
 
@@ -16,6 +16,10 @@ Enterprise teams often store critical knowledge across multiple document formats
 - Show retrieved source chunks as evidence
 - Enforce guardrails for empty queries, unsupported files, insufficient context, and ungrounded answers
 - Support OpenAI for live LLM responses with a mock demo mode fallback
+
+## Project Objective
+
+The objective of this capstone project is to design and implement a modular enterprise knowledge assistant that demonstrates the practical application of document ingestion, semantic retrieval, agent-based orchestration, grounded response generation, and reliability controls within a single end-to-end system.
 
 ## Tech Stack
 
@@ -65,7 +69,7 @@ agentic-rag-enterprise-assistant/
 
 ## Architecture
 
-The solution uses a modular RAG pipeline:
+The system follows a modular RAG architecture composed of clearly separated processing layers:
 
 - Document ingestion normalizes raw files into text records.
 - Text chunking creates overlapping segments for retrieval quality.
@@ -121,10 +125,10 @@ The full project documentation in [docs/project_documentation.md](./docs/project
 
 ## Limitations
 
-- Character-based chunking is simpler than advanced semantic chunking
-- Validation is heuristic rather than formal factual verification
-- Spreadsheet parsing converts structured data into plain text
-- Large document sets may need batching or persistent databases for scale
+- Character-based chunking is simpler than advanced semantic or structure-aware segmentation
+- Validation is heuristic rather than a formal factual verification method
+- Spreadsheet parsing converts structured data into plain text, which may reduce contextual fidelity
+- Large document sets may require batching, persistent storage, or a more scalable retrieval backend
 
 ## Future Improvements
 

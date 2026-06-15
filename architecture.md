@@ -1,6 +1,6 @@
 # Architecture Overview
 
-The application follows a simple production-style flow:
+The application follows a modular architecture intended to demonstrate the principal components of an enterprise Retrieval-Augmented Generation system in a form that is clear, testable, and appropriate for a capstone submission.
 
 1. Users upload enterprise documents through Streamlit.
 2. The document loader extracts normalized text from PDF, TXT, CSV, XLSX, and XLS files.
@@ -10,7 +10,7 @@ The application follows a simple production-style flow:
 6. A lightweight agent workflow plans retrieval, fetches evidence, generates an answer, and validates grounding.
 7. Guardrails ensure the app refuses unsupported files, empty input, and ungrounded answers.
 
-Components:
+Primary components:
 
 - `app.py`: Streamlit interface and workflow orchestration
 - `src/document_loader.py`: File parsing and text extraction
@@ -22,7 +22,7 @@ Components:
 - `src/agents.py`: Planner, Retriever, Answer Generator, Validator
 - `src/guardrails.py`: Validation and safety checks
 
-See the full Mermaid diagram in [docs/architecture_diagram.md](./docs/architecture_diagram.md). It is structured into:
+See the full Mermaid diagram in [docs/architecture_diagram.md](./docs/architecture_diagram.md). The architecture is organized into the following layers:
 
 - Ingestion: upload, parse, clean, chunk, embed, index
 - Query handling: validate, plan, retrieve, generate, validate again
