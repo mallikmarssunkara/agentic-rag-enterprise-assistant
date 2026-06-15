@@ -67,6 +67,20 @@ agentic-rag-enterprise-assistant/
 4. Ask a question in natural language.
 5. Review the grounded answer, validation status, and retrieved source chunks.
 
+## Public Demo Data
+
+The repository includes a small set of public demonstration documents in [data/sample_docs](./data/sample_docs) so the project can be evaluated without private enterprise data.
+
+Included sample files:
+
+- `employee_handbook.txt`
+- `travel_policy.txt`
+- `it_security_policy.txt`
+- `quarterly_sales.csv`
+- `training_records.xlsx`
+
+Example prompts are provided in [docs/sample_queries.md](./docs/sample_queries.md).
+
 ## Architecture
 
 The system follows a modular RAG architecture composed of clearly separated processing layers:
@@ -115,6 +129,12 @@ The full project documentation in [docs/project_documentation.md](./docs/project
 - Limitations
 - Assumptions
 - Security considerations
+
+Additional submission support files are also included:
+
+- [docs/execution_record.md](./docs/execution_record.md)
+- [docs/submission_checklist.md](./docs/submission_checklist.md)
+- [screenshots/README.md](./screenshots/README.md)
 
 ## Deployment Steps
 

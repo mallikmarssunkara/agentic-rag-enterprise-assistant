@@ -1,0 +1,10 @@
+region,quarter,revenue_usd,new_clients,customer_satisfaction
+North,Q1,125000,18,4.4
+South,Q1,98000,14,4.1
+East,Q1,143000,21,4.6
+West,Q1,117000,16,4.3
+North,Q2,131500,19,4.5
+South,Q2,105000,15,4.2
+East,Q2,149000,23,4.7
+West,Q2,122500,17,4.4
+
