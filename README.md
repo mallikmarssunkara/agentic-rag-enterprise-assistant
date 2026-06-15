@@ -101,6 +101,17 @@ More detail is available in [architecture.md](./architecture.md) and [docs/proje
 - Source chunks are always displayed
 - Mock mode works without an API key while remaining grounded in retrieved text
 
+## Documentation Coverage
+
+The full project documentation in [docs/project_documentation.md](./docs/project_documentation.md) includes:
+
+- System architecture diagram
+- Agent workflow
+- AI and UI usage
+- Limitations
+- Assumptions
+- Security considerations
+
 ## Deployment Steps
 
 1. Install dependencies in a virtual environment

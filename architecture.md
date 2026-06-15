@@ -22,3 +22,8 @@ Components:
 - `src/agents.py`: Planner, Retriever, Answer Generator, Validator
 - `src/guardrails.py`: Validation and safety checks
 
+See the full Mermaid diagram in [docs/architecture_diagram.md](./docs/architecture_diagram.md). It is structured into:
+
+- Ingestion: upload, parse, clean, chunk, embed, index
+- Query handling: validate, plan, retrieve, generate, validate again
+- Storage: uploaded files and FAISS vector index metadata
