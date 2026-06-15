@@ -1,0 +1,13 @@
+streamlit
+python-dotenv
+pandas
+openpyxl
+pypdf
+numpy
+faiss-cpu
+sentence-transformers
+langchain
+langchain-community
+openai
+pytest
+
