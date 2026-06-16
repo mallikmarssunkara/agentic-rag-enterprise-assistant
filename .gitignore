@@ -10,4 +10,6 @@ data/vector_store/*
 !data/vector_store/.gitkeep
 .cache/
 .streamlit/
+!.streamlit/
+!.streamlit/secrets.toml.example
 *.pyc

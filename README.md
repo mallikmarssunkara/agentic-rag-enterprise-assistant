@@ -64,9 +64,10 @@ Before running the application, ensure that the following are available:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Ravi-30/agetic-rag-assistant.git
-cd agetic-rag-assistant
+cd agentic-rag-enterprise-assistant
 ```
+
+If the project was provided as a ZIP or submission folder, extract it first and open the project directory in your terminal.
 
 ### 2. Create and activate a virtual environment
 
@@ -125,6 +126,7 @@ Notes:
 - If `OPENAI_API_KEY` is left empty, the application will still run in mock demo mode.
 - Mock demo mode uses real retrieval from uploaded documents but does not call the OpenAI API.
 - If the sentence-transformer model is not already cached locally, the project may use the offline hashing fallback for embeddings.
+- On Streamlit Community Cloud, you can provide the same settings through app secrets instead of a local `.env` file.
 
 ### 5. Start the application
 
@@ -239,10 +241,38 @@ Additional submission support files are also included:
 
 ## Deployment Steps
 
-1. Install dependencies in a virtual environment
-2. Add environment variables
-3. Run `streamlit run app.py`
-4. Deploy to Streamlit Community Cloud, Render, or another Python hosting platform
+### Streamlit Community Cloud
+
+1. Push the project files to your Git repository.
+2. Sign in to Streamlit Community Cloud and create a new app.
+3. Select the repository and set the main file path to `app.py`.
+4. In the app settings, add secrets using the same keys shown in `.env.example`.
+5. Deploy the application.
+
+Recommended secrets format for Streamlit Cloud:
+
+```toml
+OPENAI_API_KEY = ""
+OPENAI_MODEL = "gpt-4o-mini"
+EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+CHUNK_SIZE = "800"
+CHUNK_OVERLAP = "150"
+TOP_K = "4"
+```
+
+Notes:
+
+- A sample file is included at `.streamlit/secrets.toml.example`.
+- If `OPENAI_API_KEY` is omitted, the deployed app will still run in mock demo mode.
+- The FAISS index is built after users upload documents at runtime.
+
+### Other Platforms
+
+This project can also be deployed to other Python hosting platforms that support Streamlit applications, provided that:
+
+1. `requirements.txt` is installed
+2. environment variables or secrets are configured
+3. the startup command is set to `streamlit run app.py`
 
 ## Limitations
 

@@ -43,5 +43,4 @@ Use this checklist before submitting the capstone project.
 - Wording is formal and suitable for academic submission.
 - Architecture and agent workflow are documented clearly.
 - Limitations, assumptions, and security considerations are included.
-- GitHub repository is updated with the latest version.
-
+- Final project files are organized and ready for submission.
