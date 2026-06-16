@@ -51,21 +51,115 @@ agentic-rag-enterprise-assistant/
 `-- screenshots/
 ```
 
-## Setup Instructions
+## Prerequisites
 
-1. Create a virtual environment by following [setup_venv.md](./setup_venv.md).
-2. Install dependencies with `pip install -r requirements.txt`.
-3. Copy `.env.example` to `.env`.
-4. Add an `OPENAI_API_KEY` if you want live LLM answers.
-5. Launch the app with `streamlit run app.py`.
+Before running the application, ensure that the following are available:
 
-## How To Use
+- Python 3.10 or later
+- `pip`
+- Internet access if you want to use OpenAI responses or download the sentence-transformer model for the first time
 
-1. Open the Streamlit app.
-2. Upload one or more supported documents.
-3. Click the ingestion button to build the vector store.
-4. Ask a question in natural language.
-5. Review the grounded answer, validation status, and retrieved source chunks.
+## Setup and Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Ravi-30/agetic-rag-assistant.git
+cd agetic-rag-assistant
+```
+
+### 2. Create and activate a virtual environment
+
+Detailed setup commands are also available in [setup_venv.md](./setup_venv.md).
+
+Windows:
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+macOS/Linux:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### 4. Configure environment variables
+
+Copy `.env.example` to `.env`.
+
+Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+macOS/Linux:
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` as needed:
+
+```env
+OPENAI_API_KEY=
+OPENAI_MODEL=gpt-4o-mini
+EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+CHUNK_SIZE=800
+CHUNK_OVERLAP=150
+TOP_K=4
+```
+
+Notes:
+
+- If `OPENAI_API_KEY` is left empty, the application will still run in mock demo mode.
+- Mock demo mode uses real retrieval from uploaded documents but does not call the OpenAI API.
+- If the sentence-transformer model is not already cached locally, the project may use the offline hashing fallback for embeddings.
+
+### 5. Start the application
+
+```bash
+streamlit run app.py
+```
+
+After startup, Streamlit will show a local URL, usually:
+
+```text
+http://localhost:8501
+```
+
+Open that address in your browser.
+
+## How To Use the Application
+
+1. Launch the Streamlit application.
+2. Upload one or more files from `data/sample_docs/` or your own supported documents.
+3. Click `Ingest Documents` to extract text, create chunks, generate embeddings, and build the FAISS index.
+4. Enter a question in the chat input.
+5. Review the generated answer, validation status, and retrieved source chunks.
+6. Check the response mode shown in the interface:
+   - `mock` means demo mode without OpenAI
+   - `openai` means a real OpenAI API-backed response was used
+
+## Run Tests
+
+To verify the project setup, run:
+
+```bash
+pytest
+```
+
+If the setup is correct, the tests should complete successfully.
 
 ## Public Demo Data
 
@@ -80,6 +174,13 @@ Included sample files:
 - `training_records.xlsx`
 
 Example prompts are provided in [docs/sample_queries.md](./docs/sample_queries.md).
+
+Recommended first demo:
+
+1. Upload all files from `data/sample_docs/`
+2. Ingest the documents
+3. Ask: `What is the hotel reimbursement limit?`
+4. Ask: `How many remote work days are employees allowed per week?`
 
 ## Architecture
 
