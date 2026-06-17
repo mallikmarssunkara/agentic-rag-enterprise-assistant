@@ -1,17 +1,45 @@
-Employee Handbook Excerpt
+=========================================
+ACME ENTERPRISE - EMPLOYEE HANDBOOK (EXCERPT)
+=========================================
+Document ID: ACME-HR-HB-2026
+Version: 4.2
+Effective Date: January 1, 2026
+Owner: Human Resources Division
 
-Working Hours:
-Regular office hours are 9:00 AM to 5:00 PM from Monday through Friday.
-Employees may request flexible scheduling with manager approval.
+1. WORKING HOURS & FLEXIBLE SCHEDULING
+--------------------------------------
+* Standard Core Hours: The standard working week is Monday through Friday, 9:00 AM to 5:00 PM local time, comprising 40 hours per week (inclusive of a 1-hour daily lunch break).
+* Core Collaboration Hours: All employees are expected to be available for meetings and collaborative activities during core collaboration hours: 10:00 AM to 3:00 PM local time.
+* Flexible Scheduling: With written approval from their direct supervisor/manager, employees may adjust their start and end times (e.g., 8:00 AM to 4:00 PM or 10:00 AM to 6:00 PM). Adjustments must not affect core collaboration hours or the team's operational needs.
 
-Remote Work:
-Eligible employees may work remotely up to two days per week.
-Remote work requests must be approved by the employee's manager and documented with Human Resources.
+2. REMOTE & HYBRID WORK POLICY
+------------------------------
+* Eligibility: Hybrid work is available to full-time and part-time office-based employees whose role functions can be performed remotely, subject to manager and HR approval.
+* Weekly Cadence: Eligible employees may work remotely up to two (2) days per week. The specific days must be agreed upon with the manager to ensure adequate office coverage. Wednesday is designated as a company-wide "In-Office Collaboration Day," where remote work is generally restricted unless an exception is granted.
+* Home Office Stipend: ACME provides a one-time home office equipment stipend of 500 USD to help establish a safe and ergonomic remote workspace. Additionally, a monthly internet reimbursement of 50 USD is available upon submission of expense reports.
+* Workspace Safety: Employees must maintain a designated workspace that meets standard safety and ergonomic guidelines. Remote workspace audits may be conducted periodically.
 
-Leave Policy:
-Full-time employees receive 15 days of paid time off each calendar year.
-Unused paid time off may be carried over up to a maximum of 5 days.
+3. LEAVE & PAID TIME OFF (PTO) POLICY
+-------------------------------------
+* Standard PTO Accrual: Full-time employees accrue Paid Time Off (PTO) at a rate of 1.25 days per month, totaling fifteen (15) days per calendar year. Accrual begins on the first day of the month following the completion of the 90-day probationary period.
+* PTO Carry-Over: A maximum of five (5) unused PTO days may be carried over into the following calendar year. Any carried-over PTO must be used by March 31st of the new year, or it will be forfeited. No cash payouts are provided for forfeited PTO.
+* Sick Leave: All employees receive ten (10) paid sick days annually, allocated on January 1st. Sick leave does not carry over to the next year. If an employee is out sick for three (3) or more consecutive days, a medical certificate from a licensed health provider must be submitted to HR.
+* Paid Parental Leave: ACME provides up to twelve (12) weeks of fully paid parental leave to eligible employees following the birth of a child, or the placement of a child with the employee in connection with adoption or foster care. Employees must have completed one full year of continuous service to qualify.
+* Bereavement Leave: Employees are eligible for up to five (5) days of paid leave in the event of the death of an immediate family member (spouse, child, parent, sibling) and up to three (3) days for extended family members (grandparent, aunt/uncle, cousin).
+* Jury Duty: ACME supports civic duties by offering fully paid leave for up to two (2) weeks of jury service. Written verification of jury duty summons and participation must be submitted to HR.
 
-Code of Conduct:
-Employees are expected to maintain professional behavior, protect confidential information, and comply with company technology policies.
+4. CODE OF CONDUCT & DIVERSITY
+------------------------------
+* Professional Conduct: ACME is committed to maintaining a safe, inclusive, and professional work environment. Discrimination, harassment, or retaliation of any kind is strictly prohibited and subject to immediate disciplinary action, up to and including termination.
+* Reporting Channels:
+  - Immediate Supervisor: For standard operational issues or conflict resolution.
+  - Human Resources Division (hr@acme-enterprise.com): For formal complaints regarding discrimination or harassment.
+  - Compliance Hotline (1-800-555-ACME): An anonymous reporting portal operated by an independent third party, available 24/7.
+* Confidentiality: Employees must protect ACME's proprietary information, client data, and trade secrets. This obligation persists even after the termination of employment.
 
+5. RETIREMENT & BENEFITS SUMMARY
+--------------------------------
+* 401(k) Retirement Plan: ACME offers a retirement savings plan administered by Fidelity.
+  - Employer Match: The company matches 100% of the first 4% of employee contributions.
+  - Vesting Schedule: Employer matching contributions are subject to a 3-year vesting schedule (33% vested after Year 1, 66% after Year 2, and 100% after Year 3 of continuous service).
+* Health Insurance: Full-time employees are eligible for comprehensive medical, dental, and vision insurance starting on the first day of the month following their start date. Premium shares are deducted pre-tax from bi-weekly paychecks.
