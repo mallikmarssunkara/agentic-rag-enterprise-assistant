@@ -57,10 +57,13 @@ def ingest_documents(uploaded_files) -> dict:
 
 def get_assistant():
     settings = get_settings()
-    if "assistant" not in st.session_state:
-        assistant, _, vector_store = build_assistant(settings)
+    current_key = st.session_state.get("current_openai_api_key", None)
+    if "assistant" not in st.session_state or settings.openai_api_key != current_key:
+        assistant, embedding_service, vector_store = build_assistant(settings)
         vector_store.load()
         st.session_state["assistant"] = assistant
+        st.session_state["embedding_backend"] = embedding_service.backend
+        st.session_state["current_openai_api_key"] = settings.openai_api_key
     return st.session_state["assistant"]
 
 
@@ -71,6 +74,16 @@ def main() -> None:
 
     with st.sidebar:
         st.header("Settings")
+        user_key = st.text_input(
+            "OpenAI API Key",
+            value=st.session_state.get("OPENAI_API_KEY", settings.openai_api_key),
+            type="password",
+            placeholder="sk-...",
+        )
+        if user_key != st.session_state.get("OPENAI_API_KEY", settings.openai_api_key):
+            st.session_state["OPENAI_API_KEY"] = user_key
+            st.rerun()
+
         st.write(f"Embedding model: `{settings.embedding_model}`")
         st.write(f"OpenAI model: `{settings.openai_model}`")
         st.write(f"Chunk size: `{settings.chunk_size}`")

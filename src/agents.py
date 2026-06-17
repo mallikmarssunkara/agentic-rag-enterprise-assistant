@@ -35,14 +35,14 @@ class AnswerGeneratorAgent:
 
 
 class ValidatorAgent:
-    def validate(self, question: str, response: dict) -> dict:
+    def validate(self, question: str, response: dict, minimum_score: float = 0.20) -> dict:
         warnings: list[str] = []
 
         query_warning = validate_query(question)
         if query_warning:
             warnings.append(query_warning)
 
-        context_warning = validate_context(response.get("sources", []))
+        context_warning = validate_context(response.get("sources", []), minimum_score=minimum_score)
         if context_warning:
             warnings.append(context_warning)
 
@@ -78,9 +78,12 @@ class AgenticAssistant:
                 "validation": {"is_valid": False, "warnings": [query_warning]},
             }
 
+        is_hashing = getattr(self.retriever.embedding_service, "backend", "sentence-transformer") == "hashing"
+        threshold = 0.01 if is_hashing else 0.20
+
         retrieval_plan = self.planner.plan(question)
         sources = self.retriever.retrieve(question)
-        context_warning = validate_context(sources)
+        context_warning = validate_context(sources, minimum_score=threshold)
         if context_warning:
             response = {
                 "answer": "The answer was not found in the uploaded documents.",
@@ -91,7 +94,7 @@ class AgenticAssistant:
             return response
 
         response = self.answer_generator.generate(question, sources, retrieval_plan)
-        response["validation"] = self.validator.validate(question, response)
+        response["validation"] = self.validator.validate(question, response, minimum_score=threshold)
         response["plan"] = retrieval_plan
         return response
 

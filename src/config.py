@@ -17,6 +17,13 @@ except Exception:  # pragma: no cover - Streamlit may be unavailable in some tes
 
 
 def get_setting(name: str, default: str) -> str:
+    if st is not None:
+        try:
+            if name in st.session_state and st.session_state[name] not in (None, ""):
+                return str(st.session_state[name])
+        except Exception:
+            pass
+
     env_value = os.getenv(name)
     if env_value not in (None, ""):
         return env_value
@@ -48,4 +55,5 @@ class Settings:
 
 
 def get_settings() -> Settings:
+    load_dotenv(override=True)
     return Settings()

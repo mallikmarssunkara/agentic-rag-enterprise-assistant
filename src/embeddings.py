@@ -18,7 +18,13 @@ class EmbeddingService:
             self.model = SentenceTransformer(model_name, local_files_only=True)
             self.backend = "sentence-transformer"
         except Exception:
-            self.model = None
+            try:
+                # If the local cache is empty, attempt to download it if online.
+                self.model = SentenceTransformer(model_name, local_files_only=False)
+                self.backend = "sentence-transformer"
+            except Exception:
+                self.model = None
+                self.backend = "hashing"
 
     def embed_documents(self, texts: list[str]) -> list[list[float]]:
         if self.model is not None:
