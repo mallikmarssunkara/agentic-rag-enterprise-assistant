@@ -47,7 +47,7 @@ class MockLLMProvider(BaseLLMProvider):
 
         snippets = []
         for chunk in context_chunks[:3]:
-            snippets.append(f"[{chunk['source']}] {chunk['text'][:220].strip()}")
+            snippets.append(f"[{chunk['source']}] {chunk['text'].strip()}")
 
         response = (
             "Demo mode response based only on retrieved document context.\n\n"
