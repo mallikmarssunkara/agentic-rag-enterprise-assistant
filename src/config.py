@@ -6,9 +6,9 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(BASE_DIR / ".env")
 
 try:
     import streamlit as st
@@ -55,5 +55,5 @@ class Settings:
 
 
 def get_settings() -> Settings:
-    load_dotenv(override=True)
+    load_dotenv(BASE_DIR / ".env", override=True)
     return Settings()

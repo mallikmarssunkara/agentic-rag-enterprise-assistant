@@ -75,6 +75,14 @@ Fill this section before final submission:
 - Number of test cases passed:
 - Overall execution status:
 
+ Date of execution:
+- System used:
+- Python version:
+- LLM mode used:
+- Number of documents uploaded:
+- Number of test cases passed:
+- Overall execution status:
+
 ## Observed Outputs
 
 Record a short summary of the observed behavior during execution:
